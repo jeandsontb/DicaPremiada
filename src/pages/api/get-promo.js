@@ -4,10 +4,7 @@ import { fromBase64 } from '../../../utils/base64';
 
 const doc = new GoogleSpreadsheet(process.env.SHEET_DOC_ID);
 
-
-
 export default async(req, res) => {
-
 
     try {
 

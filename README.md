@@ -54,7 +54,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
 [Git](https://git-scm.com), [Node.js][nodejs]. 
 Além disto é bom ter um editor para trabalhar com o código como [VSCode][vscode] e também configurar
-o arquivo de exemplo .env.example para acesso a planilha.
+o arquivo de exemplo .env.example para acesso a planilha, converter a chave key para base64encode.
 
 ### 🧭 Rodando a aplicação web (Front End)
 
