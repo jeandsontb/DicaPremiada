@@ -71,6 +71,7 @@ const Header = () => {
                     <ul>
                         <li><Link href="/about"><a>Sobre</a></Link></li>
                         <li><Link href="/contact"><a>Contato</a></Link></li>
+                        <li><Link href="/search"><a>Pesquisa</a></Link></li>
                     </ul>
                 </nav>
             </ContainerSecondary>

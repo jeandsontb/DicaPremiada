@@ -7,6 +7,7 @@
 /coverage
 
 # next.js
+.next
 /.next/
 /out/
 
@@ -27,6 +28,9 @@ yarn-error.log*
 .env.development.local
 .env.test.local
 .env.production.local
+
+# Credentials sheet
+credentials.json
 
 # vercel
 .vercel

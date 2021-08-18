@@ -1,7 +1,9 @@
 import React from 'react'
 import Link from 'next/link';
+import useSWR from 'swr';
 
 import styled from 'styled-components';
+import PageTitle from '../components/pageTitle';
 
 const Container = styled.section`
     min-height: calc(100vh - 225px);
@@ -42,10 +44,20 @@ const BoxDetail = styled.div`
     margin-top: 50px;
 `;
 
+
+const fetcher = (...args) => fetch(...args)
+    .then(res => res.json());
+
+
 const Home = () => {
+
+    const { data, error} = useSWR('/api/get-promo', fetcher);
+    
+    
+
   return (
       <Container> 
-
+        <PageTitle title="Seja bem vindo" />
         <p>
             A melhor maneira de podermos melhorar ainda mais nossos serviços, é você 
             falar como foi sua experiência em nosso estabelecimento. <br /> A sua opinião é muito 
@@ -58,9 +70,17 @@ const Home = () => {
             </ButtonSearch>
         </Link>
 
-        <BoxDetail>
-            Messagem do código
-        </BoxDetail>
+        {!data &&
+            <BoxDetail>
+                Carregando...
+            </BoxDetail>
+        }
+
+        {data && data.showCoupon &&
+            <BoxDetail>
+                {data.message}
+            </BoxDetail>
+        }
 
           
       </Container>

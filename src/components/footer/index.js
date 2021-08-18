@@ -7,7 +7,7 @@ const Container = styled.footer`
     text-align: center;
     width: 100vw;
     height: 65px;
-    padding: 15px 0;
+    padding-top: 15px;
     background-color: ${({theme}) => theme.colors.yellowstrong};
 
     strong {
