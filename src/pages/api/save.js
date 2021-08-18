@@ -30,9 +30,7 @@ export default async(req, res) => {
         const textPromocaoCell = sheetConfig.getCell(2, 1);
 
         let Cupom = '';
-        let Promo = '';
-
-        console.log('aqui '+ mostrarPromocaoCell.value);
+        let Promo = ''; 
 
         if(mostrarPromocaoCell.value === 'VERDADEIRO') {
             Cupom = genCupom();
