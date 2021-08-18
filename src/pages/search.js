@@ -176,7 +176,7 @@ const Search = () => {
                     <div className="boxCheck">
                         <label>Nota:</label>
                         {notas.map((item) => (
-                            <label className="labelCheck">
+                            <label className="labelCheck" key={item}>
                                 {item}
                                 <input className="check" key={item} type="radio" name="Nota" value={item} onChange={onChange} />
                             </label>
