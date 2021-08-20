@@ -129,18 +129,22 @@ const Search = () => {
     const notas = [0, 1, 2, 3, 4, 5];
 
     const save = async () => {
-        try {
-            const response = await fetch('/api/save', {
-                method: 'POST',
-                body: JSON.stringify(form)
-            })
+        if(form.Nome && form.Email && form.Whatsapp && form.Nota) {
+            try {
+                const response = await fetch('/api/save', {
+                    method: 'POST',
+                    body: JSON.stringify(form)
+                })
+        
+                const data = await response.json();
+                setSucess(true);
+                setRetorno(data);
+                
+            } catch (err) {
     
-            const data = await response.json();
-            setSucess(true);
-            setRetorno(data);
-            
-        } catch (err) {
-
+            }
+        } else {
+            alert('É necessário preencher o formulário para enviar sua sugestão!')
         }
     }
 
